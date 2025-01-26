@@ -48,7 +48,6 @@ To get the most out of this repository, you should have:
 
 - **Detailed Walkthroughs**: Step-by-step guides for solving challenges.
 - **Real-World Scenarios**: Solutions based on practical and real-world vulnerabilities.
-- **Path to RCE**: A dedicated section that focuses on achieving Remote Code Execution in labs.
 - **Individual Lab Walkthroughs**: Separate folders containing walkthroughs for each lab.
 - **Beginner Friendly**: Easy-to-follow instructions for newcomers to cybersecurity.
 
