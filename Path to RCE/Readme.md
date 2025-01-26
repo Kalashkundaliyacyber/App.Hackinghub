@@ -8,7 +8,6 @@ The goal of this lab is to discover a Remote Code Execution (RCE) vulnerability 
 
 ## Lab Details
 
-- **Difficulty**: Easy
 - **Release Date**: January 17th, 2025
 - **URL**: [https://5mnpbn0f.eu1.ctfio.com/admin/incident-report](https://5mnpbn0f.eu1.ctfio.com/admin/incident-report)
 
