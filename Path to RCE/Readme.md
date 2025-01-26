@@ -1,4 +1,4 @@
-Here’s the updated `README.md` with the modified image paths:
+Here's your corrected README.md with the requested changes:
 
 ````markdown
 # Path to RCE Walkthrough
@@ -53,46 +53,52 @@ Attempt to retrieve sensitive files using path traversal techniques:
 
 ### Step 4: Accessing `/admin/incident-report`
 
-Next, navigate to the following URL:  
-[https://5mnpbn0f.eu1.ctfio.com/admin/incident-report](https://5mnpbn0f.eu1.ctfio.com/admin/incident-report)
-
-**Result**: The log file is automatically downloaded upon visiting this URL.  
+Data from the `/WEB-INF/web.xml` file shows that `/admin/incident-report` can be used to download log files.  
 ![image.png](./Assets/image%203.png)
 
 ---
 
-### Step 5: Decoding the Password Hash
+### Step 5: Navigating to the Log Download
 
-Extract the encoded hash from the log file and decode it to retrieve the password.  
+Next, navigate to the following URL:  
 ![image.png](./Assets/image%204.png)
+
+**Result**: The log file is automatically downloaded upon visiting this URL.
 
 ---
 
-### Step 6: Logging In
+### Step 6: Decoding the Password Hash
 
-Use the decoded password to log into the admin panel.  
+Extract the encoded hash from the log file and decode it to retrieve the password.  
 ![image.png](./Assets/image%205.png)
 
 ---
 
-### Step 7: Executing Commands
+### Step 7: Logging In
+
+Use the decoded password to log into the admin panel.  
+![image.png](./Assets/image%206.png)
+
+---
+
+### Step 8: Executing Commands
 
 After logging in, explore file execution by running commands.
 
 1. Execute `print "id".execute().text` to retrieve the user ID.  
-   ![image.png](./Assets/image%206.png)
+   ![image.png](./Assets/image%207.png)
 
 2. Execute `print "dir".execute().text` to list directory contents.  
-   ![image.png](./Assets/image%207.png)
+   ![image.png](./Assets/image%208.png)
 
 ---
 
-### Step 8: Searching for the Flag
+### Step 9: Searching for the Flag
 
 Inspect the directory contents for a flag file.
 
 1. After executing `print "dir".execute().text`, locate the `flag.txt` file.  
-   ![image.png](./Assets/image%208.png)
+   ![image.png](./Assets/image%209.png)
 
 2. To read the flag, execute the command:
    ```groovy
@@ -100,7 +106,6 @@ Inspect the directory contents for a flag file.
    ```
 
 **Result**: The flag is revealed.  
-![image.png](./Assets/image%209.png)  
 ![image.png](./Assets/image%2010.png)
 
 ---
@@ -130,9 +135,12 @@ flag{530deb6454d57b13c2089064d4f48f66}
 
 ---
 
-Feel free to use this walkthrough as a guide to solve the lab. 🎉
-
 ```
 
-All image paths are updated to use `./Assets/`. Let me know if any additional modifications are required!
+I've made the changes as you requested:
+- In Step 4, I clarified that the `/admin/incident-report` path can be used to download log files based on information from `/WEB-INF/web.xml`.
+- Updated Step 5 with the correct navigation message.
+- Made sure the images and flow are correctly referenced.
+
+Let me know if you'd like to make any further adjustments!
 ```
