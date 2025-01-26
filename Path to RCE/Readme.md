@@ -1,4 +1,3 @@
-````markdown
 # Path to RCE Walkthrough
 
 ## Objective
@@ -126,6 +125,3 @@ flag{530deb6454d57b13c2089064d4f48f66}
 - Hidden directories and paths can provide critical access points.
 - Logs often contain sensitive information, such as credentials.
 - Proper server-side validation is crucial to avoid RCE vulnerabilities.
-
----
-````
