@@ -1,4 +1,4 @@
-Here’s the updated `README.md` file, including the screenshots as specified:
+Here's the corrected `README.md` with the specific commands updated in Step 8:
 
 ````markdown
 # Path to RCE Walkthrough
@@ -29,14 +29,14 @@ dirsearch -u https://5mnpbn0f.eu1.ctfio.com
 ````
 
 **Result**: The `/admin` directory is discovered.  
-![image.png](image.png)
+![image.png](./Assets/image.png)
 
 ---
 
 ### Step 2: Exploring the `/admin` Directory
 
 Inspecting the `/admin` path reveals the `/admin/download` endpoint.  
-![image.png](image%201.png)
+![image.png](./Assets/image%201.png)
 
 ---
 
@@ -47,7 +47,7 @@ Attempt to retrieve sensitive files using path traversal techniques:
 1. Tested `/admin/download?filename=/WEB-INF/web.xml.jsf`, but it didn’t work.
 2. Successfully accessed `/admin/download?filename=/WEB-INF/web.xml`.
 
-![image.png](image%202.png)
+![image.png](./Assets/image%202.png)
 
 ---
 
@@ -59,21 +59,21 @@ Navigate to the URL:
 [https://5mnpbn0f.eu1.ctfio.com/admin/incident-report](https://5mnpbn0f.eu1.ctfio.com/admin/incident-report)
 
 **Result**: Log files containing encoded data are retrieved.  
-![image.png](image%203.png)
+![image.png](./Assets/image%203.png)
 
 ---
 
 ### Step 5: Decoding the Password Hash
 
 Extract the encoded hash from the log file and decode it to retrieve the password.  
-![image.png](image%204.png)
+![image.png](./Assets/image%204.png)
 
 ---
 
 ### Step 6: Logging In
 
 Use the decoded password to log into the admin panel.  
-![image.png](image%205.png)
+![image.png](./Assets/image%205.png)
 
 ---
 
@@ -82,25 +82,28 @@ Use the decoded password to log into the admin panel.
 After logging in, explore file execution by running commands.
 
 1. Execute `print "id".execute().text` to retrieve the user ID.  
-   ![image.png](image%206.png)
+   ![image.png](./Assets/image%206.png)
 
 2. Execute `print "dir".execute().text` to list directory contents.  
-   ![image.png](image%207.png)
+   ![image.png](./Assets/image%207.png)
 
 ---
 
 ### Step 8: Searching for the Flag
 
-Iterate through text files to locate the flag. Use:
+Inspect the directory contents for a flag file.
 
-```groovy
-print "cat /flag.txt".execute().text
-```
+1. After executing `print "dir".execute().text`, locate the `flag.txt` file.  
+   ![image.png](./Assets/image%208.png)
 
-**Result**: Multiple text files contained the flag.  
-![image.png](image%208.png)  
-![image.png](image%209.png)  
-![image.png](image%2010.png)
+2. To read the flag, execute the command:
+   ```groovy
+   print "cat abcdflag.txt".execute().text
+   ```
+
+**Result**: The flag is revealed.  
+![image.png](./Assets/image%209.png)  
+![image.png](./Assets/image%2010.png)
 
 ---
 
@@ -133,5 +136,5 @@ Feel free to use this walkthrough as a guide to solve the lab. 🎉
 
 ```
 
-Let me know if there are any further changes you’d like!
+This version reflects the corrected commands in **Step 8**. Let me know if there’s anything else!
 ```
