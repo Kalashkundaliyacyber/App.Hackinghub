@@ -1,5 +1,3 @@
-Here's your corrected README.md with the requested changes:
-
 ````markdown
 # Path to RCE Walkthrough
 
@@ -21,31 +19,30 @@ The goal of this lab is to discover a Remote Code Execution (RCE) vulnerability 
 
 ### Step 1: Directory Enumeration
 
-Using `dirsearch`, enumerate directories to identify hidden paths.
+Run `dirsearch` to enumerate directories and discover hidden paths on the server.  
+Result: The `/admin` directory is found.
 
 ```bash
 dirsearch -u https://5mnpbn0f.eu1.ctfio.com
 ```
-````
 
-**Result**: The `/admin` directory is discovered.  
 ![image.png](./Assets/image.png)
 
 ---
 
 ### Step 2: Exploring the `/admin` Directory
 
-Inspecting the `/admin` path reveals the `/admin/download` endpoint.  
+Investigate the `/admin` path to find additional endpoints.  
+Result: The `/admin/download` endpoint is discovered.
+
 ![image.png](./Assets/image%201.png)
 
 ---
 
 ### Step 3: File Traversal Attack
 
-Attempt to retrieve sensitive files using path traversal techniques:
-
-1. Tested `/admin/download?filename=/WEB-INF/web.xml.jsf`, but it didn’t work.
-2. Successfully accessed `/admin/download?filename=/WEB-INF/web.xml`.
+Attempt path traversal to access sensitive files on the server.  
+Result: Successfully retrieve `/admin/download?filename=/WEB-INF/web.xml`.
 
 ![image.png](./Assets/image%202.png)
 
@@ -53,60 +50,57 @@ Attempt to retrieve sensitive files using path traversal techniques:
 
 ### Step 4: Accessing `/admin/incident-report`
 
-Data from the `/WEB-INF/web.xml` file shows that `/admin/incident-report` can be used to download log files.  
+The `/WEB-INF/web.xml` file reveals that `/admin/incident-report` can download log files.  
+Result: The endpoint is identified for further exploitation.
+
 ![image.png](./Assets/image%203.png)
 
 ---
 
 ### Step 5: Navigating to the Log Download
 
-Next, navigate to the following URL:  
-![image.png](./Assets/image%204.png)
+Navigate to the `/admin/incident-report` to download the log file.  
+Result: The log file is automatically downloaded.
 
-**Result**: The log file is automatically downloaded upon visiting this URL.
+![image.png](./Assets/image%204.png)
 
 ---
 
 ### Step 6: Decoding the Password Hash
 
-Extract the encoded hash from the log file and decode it to retrieve the password.  
+Extract the encoded password hash from the downloaded log file.  
+Use a decoding method to reveal the password.
+
 ![image.png](./Assets/image%205.png)
 
 ---
 
 ### Step 7: Logging In
 
-Use the decoded password to log into the admin panel.  
+Login to the admin panel with the decoded password.  
+Result: Successful login to the admin panel.
+
 ![image.png](./Assets/image%206.png)
 
 ---
 
 ### Step 8: Executing Commands
 
-After logging in, explore file execution by running commands.
+Execute commands to interact with the server and enumerate available information.  
+Result: Use commands like `print "id".execute().text` to retrieve user ID and `print "dir".execute().text` to list files.
 
-1. Execute `print "id".execute().text` to retrieve the user ID.  
-   ![image.png](./Assets/image%207.png)
+![image.png](./Assets/image%207.png)
 
-2. Execute `print "dir".execute().text` to list directory contents.  
-   ![image.png](./Assets/image%208.png)
+![image.png](./Assets/image%208.png)
 
 ---
 
 ### Step 9: Searching for the Flag
 
-Inspect the directory contents for a flag file.
+Locate the `flag.txt` file by inspecting the directory contents.  
+Use the command `print "cat abcdflag.txt".execute().text` to read the flag.
 
-1. After executing `print "dir".execute().text`, locate the `flag.txt` file.  
-   ![image.png](./Assets/image%209.png)
-
-2. To read the flag, execute the command:
-   ```groovy
-   print "cat abcdflag.txt".execute().text
-   ```
-
-**Result**: The flag is revealed.  
-![image.png](./Assets/image%2010.png)
+![image.png](./Assets/image%209.png)
 
 ---
 
@@ -134,13 +128,4 @@ flag{530deb6454d57b13c2089064d4f48f66}
 - Proper server-side validation is crucial to avoid RCE vulnerabilities.
 
 ---
-
-```
-
-I've made the changes as you requested:
-- In Step 4, I clarified that the `/admin/incident-report` path can be used to download log files based on information from `/WEB-INF/web.xml`.
-- Updated Step 5 with the correct navigation message.
-- Made sure the images and flow are correctly referenced.
-
-Let me know if you'd like to make any further adjustments!
-```
+````
