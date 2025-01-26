@@ -9,11 +9,8 @@ Welcome to the **App.Hackinghub** repository! This project is designed to provid
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
 3. [Features](#features)
-4. [Lab Walkthroughs](#lab-walkthroughs)
-   - Path to RCE (Remote Code Execution)
-   - Individual Lab Walkthroughs
-5. [How to Contribute](#how-to-contribute)
-6. [License](#license)
+4. [How to Contribute](#how-to-contribute)
+5. [License](#license)
 
 ---
 
@@ -54,45 +51,6 @@ To get the most out of this repository, you should have:
 - **Path to RCE**: A dedicated section that focuses on achieving Remote Code Execution in labs.
 - **Individual Lab Walkthroughs**: Separate folders containing walkthroughs for each lab.
 - **Beginner Friendly**: Easy-to-follow instructions for newcomers to cybersecurity.
-
----
-
-## Lab Walkthroughs
-
-### Path to RCE
-
-#### Objective
-
-Understand how to exploit vulnerabilities to achieve Remote Code Execution (RCE) in the provided labs.
-
-#### Steps
-
-1. **Identify the Vulnerability**:
-
-   - Scan the target application using tools like `nmap` or `Nikto`.
-   - Look for injection points or misconfigurations.
-
-2. **Exploit the Vulnerability**:
-
-   - Use payloads from resources like `PayloadsAllTheThings`.
-   - Inject malicious code to test for RCE.
-
-3. **Confirm Execution**:
-
-   - Verify successful execution by spawning a reverse shell or capturing the output.
-
-4. **Mitigation Tips**:
-   - Apply proper input validation.
-   - Use Web Application Firewalls (WAFs) to monitor suspicious activities.
-
-### Individual Lab Walkthroughs
-
-Each lab has its own dedicated folder within this repository. Navigate to the respective folder to find a detailed walkthrough for that specific lab. Example:
-
-- `Labs/Lab1`: Walkthrough for Lab 1
-- `Labs/Lab2`: Walkthrough for Lab 2
-
-These folders include step-by-step instructions, tools used, and screenshots (if applicable) to guide you through the process.
 
 ---
 
