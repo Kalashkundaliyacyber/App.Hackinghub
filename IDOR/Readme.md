@@ -9,6 +9,7 @@ The goal of this lab is to exploit an Insecure Direct Object Reference (IDOR) vu
 ## Lab Details
 
 - **Release Date**: February 28th, 2024
+- **Difficulty**: Medium
 - **URL**: [5cidkg85.eu1.ctfio.com](https://5cidkg85.eu1.ctfio.com)
 - **Username**: ben
 - **Password**: password
@@ -124,7 +125,7 @@ Confirm the modification was successful and capture the flag.
 ## Flag
 
 ```text
-flag{example_flag_12345}
+Change Adam's zipcode to 12345
 ```
 
 ---
