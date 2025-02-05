@@ -14,11 +14,11 @@ Query used:
 
 ```sql
 1' and 1=1;--
-
-![Task 1](./Assets/image.png)
 ```
 
 Result: Did not produce the desired output.
+
+![Task 1](./Assets/image.png)
 
 ### Attempt 2:
 
@@ -26,11 +26,11 @@ Query used:
 
 ```sql
 1' UNION SELECT 1,2,3,4;--
-
-![Task 2](./Assets/image%201.png)
 ```
 
 Result: Displayed content but not the expected output.
+
+![Task 2](./Assets/image%201.png)
 
 ### Successful Attempt:
 
@@ -38,11 +38,11 @@ Query used:
 
 ```sql
 1' UNION SELECT 1,2,3,DATABASE();--
-
-![Task 2](./Assets/image%202.png)
 ```
 
 Result: Successfully retrieved the current database name.
+
+![Task 3](./Assets/image%202.png)
 
 ### Alternative Method:
 
@@ -50,13 +50,11 @@ Query used:
 
 ```sql
 0' OR id = '2
-
-![Task 2](./Assets/image%203.png)
 ```
 
 Result: Displayed the desired article ID 2.
 
-![Task 1](./Assets/image.png)
+![Task 4](./Assets/image%203.png)
 
 ---
 
@@ -70,7 +68,7 @@ Query used:
 
 Result: Identified the correct number of columns.
 
-![Task 2](./Assets/image%204.png)
+![Task 5](./Assets/image%204.png)
 
 ---
 
@@ -84,7 +82,7 @@ Query used:
 
 Result: Verified that character data can be retrieved.
 
-![Task 3](./Assets/image%205.png)
+![Task 6](./Assets/image%205.png)
 
 ---
 
@@ -98,7 +96,7 @@ Query used:
 
 Result: Successfully retrieved the database name.
 
-![Task 4](./Assets/image%206.png)
+![Task 7](./Assets/image%206.png)
 
 ---
 
@@ -112,7 +110,7 @@ Query used:
 
 Result: Extracted all database names.
 
-![Task 5](./Assets/image%207.png)
+![Task 8](./Assets/image%207.png)
 
 ---
 
@@ -126,7 +124,7 @@ Query used:
 
 Result: Retrieved table names but not the expected output.
 
-![Task 6](./Assets/image%208.png)
+![Task 9](./Assets/image%208.png)
 
 ### Improved Query:
 
@@ -136,7 +134,7 @@ Result: Retrieved table names but not the expected output.
 
 Result: Successfully listed all tables in the `sqli_two` database.
 
-![Task 6 - Improved](./Assets/image%209.png)
+![Task 10](./Assets/image%209.png)
 
 ---
 
@@ -150,7 +148,7 @@ Query used:
 
 Result: Retrieved all column names but not the expected output.
 
-![Task 7](./Assets/image%2010.png)
+![Task 11](./Assets/image%2010.png)
 
 ### Improved Query:
 
@@ -160,7 +158,7 @@ Result: Retrieved all column names but not the expected output.
 
 Result: Successfully retrieved column names for the `users` table.
 
-![Task 7 - Improved](./Assets/image%2011.png)
+![Task 12](./Assets/image%2011.png)
 
 ---
 
@@ -174,7 +172,7 @@ Query used:
 
 Result: Successfully retrieved usernames and passwords.
 
-![Task 8](./Assets/image%2012.png)
+![Task 13](./Assets/image%2012.png)
 
 ---
 
@@ -188,7 +186,7 @@ Query used:
 
 Result: Successfully retrieved all usernames and passwords in a single row.
 
-![Task 9](./Assets/image%2013.png)
+![Task 14](./Assets/image%2013.png)
 
 ---
 
