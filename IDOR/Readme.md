@@ -10,7 +10,7 @@ The goal of this lab is to exploit an Insecure Direct Object Reference (IDOR) vu
 
 - **Release Date**: February 28th, 2024
 - **Difficulty**: Medium
-- **URL**: [5cidkg85.eu1.ctfio.com](https://5cidkg85.eu1.ctfio.com)
+- **URL**: 5cidkg85.eu1.ctfio.com
 - **Username**: ben
 - **Password**: password
 
